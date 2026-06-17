@@ -1,0 +1,37 @@
+artifact_path: file:///C:/Users/Quentin Morelle/OneDrive/Bureau/Notebook/Projets/mlops_project_1/mlruns/1/models/m-303196e9ae8c4ab2a24a15431a2dcc7e/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.11.9
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.9.0
+    skops_trusted_types: null
+is_signature_from_type_hint: false
+mlflow_version: 3.13.0
+model_id: m-303196e9ae8c4ab2a24a15431a2dcc7e
+model_size_bytes: 19040
+model_uuid: m-303196e9ae8c4ab2a24a15431a2dcc7e
+prompts: null
+run_id: 2ab01e27146c483185763c80d6a3877d
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "double", "name": "SepalLengthCm", "required": true}, {"type":
+    "double", "name": "SepalWidthCm", "required": true}, {"type": "double", "name":
+    "PetalLengthCm", "required": true}, {"type": "double", "name": "PetalWidthCm",
+    "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "object", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2026-06-17 13:49:29.841050'

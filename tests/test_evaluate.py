@@ -32,9 +32,10 @@ def test_evaluate_returns_float(sample_predictions):
     """
     y_true, _, y_pred_imperfect = sample_predictions
     
-    accuracy = evaluate_model(y_true, y_pred_imperfect)
+    accuracy, f1 = evaluate_model(y_true, y_pred_imperfect)
     
     assert isinstance(accuracy, float), f"L'accuracy devrait être un float, pas {type(accuracy)}"
+    assert isinstance(f1, float), f"Le f1 devrait être un float, pas {type(f1)}"
 
 def test_evaluate_accuracy_range(sample_predictions):
     """
@@ -43,9 +44,10 @@ def test_evaluate_accuracy_range(sample_predictions):
     """
     y_true, _, y_pred_imperfect = sample_predictions
     
-    accuracy = evaluate_model(y_true, y_pred_imperfect)
+    accuracy, f1 = evaluate_model(y_true, y_pred_imperfect)
     
     assert 0.0 <= accuracy <= 1.0, f"L'accuracy {accuracy} n'est pas entre 0 et 1"
+    assert 0.0 <= f1 <= 1.0, f"Le f1 score {f1} n'est pas entre 0 et 1"
 
 def test_evaluate_perfect_score(sample_predictions):
     """
@@ -53,9 +55,10 @@ def test_evaluate_perfect_score(sample_predictions):
     """
     y_true, y_pred_perfect, _ = sample_predictions
     
-    accuracy = evaluate_model(y_true, y_pred_perfect)
+    accuracy, f1 = evaluate_model(y_true, y_pred_perfect)
     
     assert accuracy == 1.0, f"Une prédiction parfaite devrait donner 1.0, obtenu {accuracy}"
+    assert f1 == 1.0, f"Une prédiction parfaite devrait donner 1.0, obtenu {f1}"
 
 def test_evaluate_handles_shape_mismatch():
     """
